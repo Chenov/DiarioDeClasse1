@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioDeClasse.Views.DetView"
+             Title="{Binding Path=Disciplina.nome}">
+
+    <StackLayout Padding="25" BackgroundColor="#20B2AA">
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="Periodo">
+                        <SwitchCell Text="{Binding TxtBimestral}" On="{Binding TemBimestral}"/>
+                        <SwitchCell Text="{Binding TxtSemestral}" On="{Binding TemSemestral}"/>
+                        <SwitchCell Text="{Binding TxtAnual}" On="{Binding TemAnual}"/>
+                        <TextCell Text="{Binding CagTotFormat}"></TextCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button x:Name="botaoProximo" Text="Próximo" 
+                Clicked="botaoProximo_Clicked"></Button>
+        </StackLayout>
+
+</ContentPage>

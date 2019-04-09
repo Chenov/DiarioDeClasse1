@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Disciplina"
+             Title="Disciplina"
+             x:Class="DiarioDeClasse.Views.DisView">
+
+    <StackLayout Padding="15" BackgroundColor="#20B2AA">
+            <ListView x:Name="listViewDisciplina" 
+                  ItemsSource="{Binding Disciplina}"
+                  ItemTapped="listViewDisciplina_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Label FontSize="12" 
+                                   FormattedText="{Binding DisLabel}"></Label>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+</ContentPage>

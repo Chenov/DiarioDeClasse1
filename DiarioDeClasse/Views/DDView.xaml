@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioDeClasse.Views.DDView"
+             Title="{Binding Path=Disciplina.nome}">
+
+    <StackLayout Padding="15" BackgroundColor="#20B2AA" >
+        
+            <TableView Intent="Form">
+                <TableRoot Title="Informações">                    
+                    <TableSection Title="Dados do Aluno">
+                    <EntryCell Label="Nome =" Keyboard="Text" Text="{Binding Nome}" />
+                            <EntryCell Label="Celular =" Keyboard="Telephone" Text="{Binding Fone}" />
+                                <EntryCell Label="E-mail ="  Keyboard="Email" Text="{Binding Email}"/>
+                                    <EntryCell Label="Matricula =" Keyboard="Text" Text="{Binding Matricula}" />                   
+                    </TableSection>
+                    <TableSection Title="Data / Hora">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="16,0,16,0">
+                                <Label Text="Data =" HorizontalOptions="StartAndExpand"></Label>
+                                    <DatePicker HorizontalOptions="End"
+                                    Date="{Binding DataMatricula}"></DatePicker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="16,0,16,0">
+                                <Label Text="Hora =" HorizontalOptions="StartAndExpand"></Label>
+                                    <TimePicker HorizontalOptions="End"
+                                    Time="{Binding HoraMatricula}"></TimePicker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Matricular" Clicked="Button_Clicked"></Button>
+    
+        </StackLayout>
+
+</ContentPage>
